@@ -1,0 +1,18 @@
+spring:
+  application.name: spring-ai-playground
+  ai:
+    openai:
+        api-key: ${GROQ_API_KEY}
+        base-url: https://api.groq.com/openai
+        chat:
+          options:
+            model: llama-3.3-70b-versatile
+            # model: openai/gpt-oss-20b
+            temperature: 0.0
+    chat:
+      client:
+        observations:
+          log-prompt: true
+          log-completion: true
+          include-error-logging: true
+
