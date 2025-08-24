@@ -1,4 +1,4 @@
-package io.github.rahulrajsonu.spring_ai_playground.multimodal;
+package io.github.rahulrajsonu.spring_ai_playground.multimodal.image;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

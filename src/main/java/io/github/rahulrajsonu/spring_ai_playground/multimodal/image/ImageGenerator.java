@@ -1,4 +1,4 @@
-package io.github.rahulrajsonu.spring_ai_playground.multimodal;
+package io.github.rahulrajsonu.spring_ai_playground.multimodal.image;
 
 import org.springframework.ai.image.ImageOptions;
 import org.springframework.ai.image.ImagePrompt;
