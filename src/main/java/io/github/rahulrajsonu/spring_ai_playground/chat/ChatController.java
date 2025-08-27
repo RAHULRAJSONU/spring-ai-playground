@@ -10,7 +10,9 @@ public class ChatController {
 
     private final ChatClient chatClient;
 
-    public ChatController(ChatClient.Builder builder) {
+
+    public ChatController(
+            ChatClient.Builder builder) {
         this.chatClient = builder.build();
     }
 

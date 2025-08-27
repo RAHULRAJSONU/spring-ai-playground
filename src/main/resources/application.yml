@@ -11,9 +11,38 @@ spring:
             # model: openai/gpt-oss-20b
             temperature: 0.0
     chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: never
       client:
         observations:
           log-prompt: true
           log-completion: true
           include-error-logging: true
-
+    retry:
+      max-attempts: 6
+      backoff:
+        initial-interval: 1s
+        multiplier: 2
+        max-interval: 30s
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springaidb
+    username: postgres
+    password: ${SPRING_AI_DB_PASSWORD}
+    driverClassName: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 30          # tune per CPU/traffic
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      validation-timeout: 5000
+      leak-detection-threshold: 0
+  jpa:
+    hibernate:
+      ddl-auto: update # or create, create-drop, none
+    show-sql: true # set to false in production
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
