@@ -1,31 +1,7 @@
 spring:
   application.name: spring-ai-playground
-  ai:
-    openai:
-        api-key: ${GROQ_API_KEY}
-        base-url: https://api.groq.com/openai
-        chat:
-          options:
-#            model: meta-llama/llama-4-maverick-17b-128e-instruct
-            model: llama-3.3-70b-versatile
-            # model: openai/gpt-oss-20b
-            temperature: 0.0
-    chat:
-      memory:
-        repository:
-          jdbc:
-            initialize-schema: never
-      client:
-        observations:
-          log-prompt: true
-          log-completion: true
-          include-error-logging: true
-    retry:
-      max-attempts: 6
-      backoff:
-        initial-interval: 1s
-        multiplier: 2
-        max-interval: 30s
+#  profiles:
+#    active: local   # default to local (Ollama)
   datasource:
     url: jdbc:postgresql://localhost:5432/springaidb
     username: postgres
@@ -46,3 +22,46 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  ai:
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: never
+      client:
+        observations:
+          log-prompt: true
+          log-completion: true
+          include-error-logging: true
+    retry:
+      max-attempts: 6
+      backoff:
+        initial-interval: 1s
+        multiplier: 2
+        max-interval: 30s
+    openai:
+      api-key: ${GROQ_API_KEY}
+      base-url: https://api.groq.com/openai
+      chat:
+        options:
+#            model: meta-llama/llama-4-maverick-17b-128e-instruct
+          model: llama-3.3-70b-versatile
+          # model: openai/gpt-oss-20b
+          temperature: 0.0
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        enabled: false
+        options:
+          # choose one you've pulled locally (see step 3)
+          model: mistral:instruct
+          temperature: 0.2
+      embedding:
+        options:
+          model: nomic-embed-text
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 768
+        distance-type: COSINE_DISTANCE
+        index-type: HNSW

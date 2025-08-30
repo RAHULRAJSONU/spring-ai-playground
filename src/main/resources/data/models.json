@@ -1,0 +1,72 @@
+[
+  {
+    "company": "OpenAI",
+    "model": "GPT-4",
+    "context_window_size": 8192
+  },
+  {
+    "company": "OpenAI",
+    "model": "GPT-4 Turbo",
+    "context_window_size": 128000
+  },
+  {
+    "company": "OpenAI",
+    "model": "GPT-3.5 Turbo",
+    "context_window_size": 16385
+  },
+  {
+    "company": "Anthropic",
+    "model": "Claude 1",
+    "context_window_size": 9000
+  },
+  {
+    "company": "Anthropic",
+    "model": "Claude 2",
+    "context_window_size": 100000
+  },
+  {
+    "company": "Anthropic",
+    "model": "Claude 3",
+    "context_window_size": 200000
+  },
+  {
+    "company": "Google DeepMind",
+    "model": "Gemini 1.0",
+    "context_window_size": 32000
+  },
+  {
+    "company": "Google DeepMind",
+    "model": "Gemini 1.5",
+    "context_window_size": 1000000
+  },
+  {
+    "company": "Mistral",
+    "model": "Mistral 7B Instruct",
+    "context_window_size": 8192
+  },
+  {
+    "company": "Mistral",
+    "model": "Mixtral 8x7B",
+    "context_window_size": 32768
+  },
+  {
+    "company": "Meta",
+    "model": "LLaMA 2",
+    "context_window_size": 4096
+  },
+  {
+    "company": "Meta",
+    "model": "LLaMA 3",
+    "context_window_size": 8192
+  },
+  {
+    "company": "Cohere",
+    "model": "Command R",
+    "context_window_size": 16384
+  },
+  {
+    "company": "Cohere",
+    "model": "Command R+__CUSTOM",
+    "context_window_size": 128000
+  }
+]
